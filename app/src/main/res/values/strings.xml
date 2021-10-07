@@ -3,4 +3,6 @@
     <string name="login_button">Login</string>
     <string name="register_button">Register</string>
     <string name="twitterclone">TwitterClone</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
 </resources>
