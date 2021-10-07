@@ -7,6 +7,18 @@
     android:background="@color/fadedblue"
     tools:context=".RegisterActivity">
 
+    <Button
+        android:id="@+id/registerButtonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/darkgrey"
+        android:text="@string/register_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordTextRegister" />
+
     <TextView
         android:id="@+id/confirmPasswordTextViewRegister"
         android:layout_width="wrap_content"
