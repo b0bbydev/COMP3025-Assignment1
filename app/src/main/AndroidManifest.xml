@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TwitterClone">
         <activity
+            android:name=".UserListActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
