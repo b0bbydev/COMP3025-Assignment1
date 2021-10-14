@@ -46,5 +46,14 @@ class MainActivity : AppCompatActivity() {
             // switch to RegisterActivity.
             startActivity(intent)
         }// end of registerButtonOnClickListener.
+
+        // test button.
+        binding.testButton.setOnClickListener {
+            // get the RegisterActivity.
+            val intent = Intent(this, UserListActivity::class.java)
+
+            // switch to RegisterActivity.
+            startActivity(intent)
+        }// end of testButtonOnClickListener.
     }// end of onCreate().
 }// end of class.

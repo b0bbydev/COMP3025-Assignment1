@@ -17,7 +17,7 @@ class UserListViewModel : ViewModel()
     // this runs when we create an instance of our ViewModel.
     init
     {
-        loadUsers();
+        loadUsers()
     }// end of init.
 
     // this method will load the User objects from Firebase.Firestore
@@ -27,6 +27,7 @@ class UserListViewModel : ViewModel()
         val db = FirebaseFirestore.getInstance().collection("Users")
             .orderBy("id", Query.Direction.ASCENDING)
 
+        // snapshotListener.
         db.addSnapshotListener { documents, exception ->
 
             // if there is an exception - log it.
@@ -62,7 +63,7 @@ class UserListViewModel : ViewModel()
     }// end of loadUsers().
 
 
-    // create a method to
+    // create a method to get the list of Users.
     fun getUsers() : LiveData<List<User>>
     {
         return users
