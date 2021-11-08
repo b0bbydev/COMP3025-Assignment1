@@ -11,38 +11,38 @@ import java.lang.Exception
 class UserListViewModel : ViewModel()
 {
 
-    // this will hold a mutable list of User objects.
+    //this will hold a mutable list of Restaurant objects
     private val users = MutableLiveData<List<User>>()
 
-    // this runs when we create an instance of our ViewModel.
     init
     {
-        loadUsers()
-    }// end of init.
+        loadRestaurants()
+    }
 
-    // this method will load the User objects from Firebase.Firestore
-    private fun loadUsers()
+    /**
+     * This method will load the Restaurant objects from Firebase.FireStore
+     * https://firebase.google.com/docs/firestore/query-data/listen
+     */
+    private fun loadRestaurants()
     {
-        // create db connection.
         val db = FirebaseFirestore.getInstance().collection("Users")
-            .orderBy("id", Query.Direction.ASCENDING)
+            .orderBy("email", Query.Direction.ASCENDING)
 
-        // snapshotListener.
         db.addSnapshotListener { documents, exception ->
 
-            // if there is an exception - log it.
+            //if there is an exception - let's log it
             exception?.let {
-                Log.i("DB_Response", "Listen failed: $exception")
+                Log.i("DB_Response", "Listen failed : $exception")
                 return@addSnapshotListener
             }
 
-            // if successful - log it.
-            Log.i("DB_Response", "# of users returned: ${documents?.size()}")
+            Log.i("DB_Response", "# of elements returned: ${documents?.size()}")
 
-            // create an array list of User objects that will populate the MutableLiveData.
+            //create an array list of Restaurant objects that will be used to
+            //populate the MutableLiveData variable called restaurants
             val userList = ArrayList<User>()
 
-            // loop over the documents from the DB and create User objects.
+            //loop over the documents from the DB and create Restaurant objects
             documents?.let {
                 for (document in documents)
                 {
@@ -53,19 +53,15 @@ class UserListViewModel : ViewModel()
                     } catch (e: Exception)
                     {
                         Log.i("DB_Response", document.toString())
-                    }// end of try-catch.
-                }// end of for.
+                    }
+                }
             }
-
-            // assign users to userList.
             users.value = userList
-        }// end of addSnapshotListener.
-    }// end of loadUsers().
+        }
+    }
 
-
-    // create a method to get the list of Users.
-    fun getUsers() : LiveData<List<User>>
+    fun getUsers(): LiveData<List<User>>
     {
         return users
-    }// end of getUsers().
+    }
 }// end of class.
