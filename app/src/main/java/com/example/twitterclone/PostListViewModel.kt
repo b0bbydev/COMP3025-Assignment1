@@ -6,27 +6,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import java.lang.Exception
 
-class UserListViewModel : ViewModel()
+class PostListViewModel : ViewModel()
 {
 
     //this will hold a mutable list of Restaurant objects
-    private val users = MutableLiveData<List<User>>()
+    private val posts = MutableLiveData<List<Post>>()
 
     init
     {
-        loadRestaurants()
+        loadPosts()
     }
 
     /**
-     * This method will load the Restaurant objects from Firebase.FireStore
+     * This method will load the Post objects from Firebase.FireStore
      * https://firebase.google.com/docs/firestore/query-data/listen
      */
-    private fun loadRestaurants()
+    private fun loadPosts()
     {
-        val db = FirebaseFirestore.getInstance().collection("Users")
-            .orderBy("email", Query.Direction.ASCENDING)
+        val db = FirebaseFirestore.getInstance().collection("Posts")
+            .orderBy("postString", Query.Direction.ASCENDING)
 
         db.addSnapshotListener { documents, exception ->
 
@@ -38,30 +37,30 @@ class UserListViewModel : ViewModel()
 
             Log.i("DB_Response", "# of elements returned: ${documents?.size()}")
 
-            //create an array list of Restaurant objects that will be used to
-            //populate the MutableLiveData variable called restaurants
-            val userList = ArrayList<User>()
+            // create an array list of Post objects that will be used to
+            // populate the MutableLiveData variable called posts
+            val postList = ArrayList<Post>()
 
-            //loop over the documents from the DB and create Restaurant objects
+            // loop over the documents from the DB and create Post objects
             documents?.let {
                 for (document in documents)
                 {
                     try
                     {
-                        val user = document.toObject(User::class.java)
-                        userList.add(user)
+                        val post = document.toObject(Post::class.java)
+                        postList.add(post)
                     } catch (e: Exception)
                     {
                         Log.i("DB_Response", document.toString())
-                    }
-                }
+                    }// end of try-catch.
+                }// end of for.
             }
-            users.value = userList
+            posts.value = postList
         }
-    }
+    }// end of loadPosts().
 
-    fun getUsers(): LiveData<List<User>>
+    fun getPosts(): LiveData<List<Post>>
     {
-        return users
+        return posts
     }
 }// end of class.

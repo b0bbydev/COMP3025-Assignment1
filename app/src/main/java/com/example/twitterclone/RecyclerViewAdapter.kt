@@ -9,40 +9,40 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewAdapter(
     val context: Context,
-    val users: List<User>
-) : RecyclerView.Adapter<RecyclerViewAdapter.UserViewHolder>()
+    val posts: List<Post>
+) : RecyclerView.Adapter<RecyclerViewAdapter.PostViewHolder>()
 {
 
     /**
-     * This class is used to allow us to access the item_user.xml objects
+     * This class is used to allow us to access the item_post.xml objects
      */
-    inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val emailTextView = itemView.findViewById<TextView>(R.id.emailTextView)
+        val postTextView = itemView.findViewById<TextView>(R.id.postTextView)
     }
 
     /**
-     * This connects (aka inflates) the individual ViewHolder (which is the link to the item_user.xml)
+     * This connects (aka inflates) the individual ViewHolder (which is the link to the item_post.xml)
      * with the RecyclerView
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder
     {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.item_user, parent, false)
-        return UserViewHolder(view)
+        val view = inflater.inflate(R.layout.item_post, parent, false)
+        return PostViewHolder(view)
     }
 
     /**
-     * This method will bind the viewHolder with a specific user object
+     * This method will bind the viewHolder with a specific post object
      */
-    override fun onBindViewHolder(viewHolder: UserViewHolder, position: Int)
+    override fun onBindViewHolder(viewHolder: PostViewHolder, position: Int)
     {
-        val user = users[position]
-        viewHolder.emailTextView.text = user.email
+        val post = posts[position]
+        viewHolder.postTextView.text = post.postString
     }
 
     override fun getItemCount(): Int
     {
-        return users.size
+        return posts.size
     }
 }// end of class.

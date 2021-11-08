@@ -16,10 +16,10 @@ class RecyclerListActivity : AppCompatActivity()
         setContentView(binding.root)
 
         //get data from the view model
-        val viewModel: UserListViewModel by viewModels()
-        viewModel.getUsers().observe(this, { users ->
-            var recyclerViewAdapter = RecyclerViewAdapter(this, users)
+        val viewModel: PostListViewModel by viewModels()
+        viewModel.getPosts().observe(this, { posts ->
+            var recyclerViewAdapter = RecyclerViewAdapter(this, posts)
             binding.verticalRecyclerView.adapter = recyclerViewAdapter
         })
     }
-}
+}// end of class.

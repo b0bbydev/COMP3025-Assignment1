@@ -27,7 +27,7 @@
             android:name="com.example.twitterclone.RecyclerListActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.twitterclone.UserListActivity"
+            android:name="com.example.twitterclone.PostListActivity"
             android:exported="true" />
     </application>
 

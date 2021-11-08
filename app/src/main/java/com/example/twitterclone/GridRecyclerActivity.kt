@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.twitterclone.databinding.ActivityGridRecyclerBinding
 
-class GridRecyclerActivity : AppCompatActivity(), GridAdapter.UserItemListener
+class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
 {
     private lateinit var binding: ActivityGridRecyclerBinding
 
@@ -16,15 +16,15 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.UserItemListener
         setContentView(binding.root)
 
         //get data from the view model
-        val viewModel: UserListViewModel by viewModels()
-        viewModel.getUsers().observe(this, { users ->
-            var gridAdapter = GridAdapter(this, users, this)
+        val viewModel: PostListViewModel by viewModels()
+        viewModel.getPosts().observe(this, { posts ->
+            var gridAdapter = GridAdapter(this, posts, this)
             binding.gridRecyclerView.adapter = gridAdapter
         })
-    }
+    }// end of onCreate().
 
-    override fun userSelected(user: User)
+    override fun postSelected(post: Post)
     {
         TODO("Not yet implemented")
     }
-}
+}// end of class.

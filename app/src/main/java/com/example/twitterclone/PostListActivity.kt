@@ -1,36 +1,36 @@
 package com.example.twitterclone
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
-import com.example.twitterclone.databinding.ActivityRestaurantListBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.twitterclone.databinding.ActivityPostListBinding
 
-class UserListActivity : AppCompatActivity()
+class PostListActivity : AppCompatActivity()
 {
-    private lateinit var binding: ActivityRestaurantListBinding
+    private lateinit var binding: ActivityPostListBinding
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
-        binding = ActivityRestaurantListBinding.inflate(layoutInflater)
+        binding = ActivityPostListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //create an instance of our RestaurantListViewModel
-        val viewModel: UserListViewModel by viewModels()
+        val viewModel: PostListViewModel by viewModels()
 
-        viewModel.getUsers().observe(this, { users ->
+        viewModel.getPosts().observe(this, { posts ->
             binding.linearLayout.removeAllViews()
 
-            for (user in users)
+            for (post in posts)
             {
                 //Add restaurant to the LinearList
                 val textView = TextView(this)
-                textView.text = user.email
+                textView.text = post.postString
                 textView.textSize = 20f
 
                 binding.linearLayout.addView(textView)
-            }
+            }// end of for.
         })
-    }
-}
+    }// end of onCreate().
+}// end of class.

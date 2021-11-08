@@ -9,52 +9,51 @@ import androidx.recyclerview.widget.RecyclerView
 
 class GridAdapter(
     val context: Context,
-    val users: List<User>,
-    val itemListener: UserItemListener
+    val posts: List<Post>,
+    val itemListener: PostItemListener
 ) : RecyclerView.Adapter<GridAdapter.UserViewHolder>()
 {
 
     /**
-     * This class is used to allow us to access the item_user.xml objects
+     * This class is used to allow us to access the item_post.xml objects
      */
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val emailTextView = itemView.findViewById<TextView>(R.id.textView)
+        val postTextView = itemView.findViewById<TextView>(R.id.textView)
     }
 
     /**
-     * This connects (aka inflates) the individual ViewHolder (which is the link to the item_user.xml)
+     * This connects (aka inflates) the individual ViewHolder (which is the link to the item_post.xml)
      * with the RecyclerView
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder
     {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.item_grid_user, parent, false)
+        val view = inflater.inflate(R.layout.item_grid_post, parent, false)
         return UserViewHolder(view)
-    }
+    }// end of onCreateViewHolder().
 
     /**
-     * This method will bind the viewHolder with a specific user object
+     * This method will bind the viewHolder with a specific post object
      */
     override fun onBindViewHolder(viewHolder: UserViewHolder, position: Int)
     {
-        val user = users[position]
+        val post = posts[position]
         with(viewHolder) {
-            emailTextView.text = user.email
+            postTextView.text = post.postString
             itemView.setOnClickListener {
-                itemListener.userSelected(user)
+                itemListener.postSelected(post)
             }
         }
-    }
+    }// end of onBindViewHolder().
 
     override fun getItemCount(): Int
     {
-        return users.size
+        return posts.size
     }
 
-    interface UserItemListener
+    interface PostItemListener
     {
-        fun userSelected(user: User)
+        fun postSelected(post: Post)
     }
-
-}
+}// end of class.
