@@ -26,6 +26,8 @@ class SignInActivity : AppCompatActivity()
         val signInIntent = AuthUI.getInstance()
             .createSignInIntentBuilder()
             .setAvailableProviders(providers)
+            .setTheme(R.style.Theme_TwitterClone)
+            .setLogo(R.drawable.logo)
             .build()
         signInLauncher.launch(signInIntent)
     }
