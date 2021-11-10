@@ -20,6 +20,7 @@ class GridAdapter(
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         val postTextView = itemView.findViewById<TextView>(R.id.textView)
+        val createdByTextView = itemView.findViewById<TextView>(R.id.createdBy)
     }
 
     /**
@@ -41,6 +42,7 @@ class GridAdapter(
         val post = posts[position]
         with(viewHolder) {
             postTextView.text = post.postString
+            createdByTextView.text = post.createdBy
             itemView.setOnClickListener {
                 itemListener.postSelected(post)
             }

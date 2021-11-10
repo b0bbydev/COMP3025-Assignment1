@@ -21,20 +21,20 @@ class CommentActivity : AppCompatActivity()
 
         binding.postTextView.text = intent.getStringExtra("postString")
         val postID = intent.getStringExtra("postID")
+        val createdBy = intent.getStringExtra("createdBy")
 
         binding.saveCommentButton.setOnClickListener {
 
-            val userName = binding.usernameEditText.text.toString()
             val commentString = binding.commentEditText.text.toString()
 
             // create the ability to save a comment.
-            if (userName.isNotEmpty() && commentString.isNotEmpty())
+            if (commentString.isNotEmpty())
             {
                 val db = FirebaseFirestore.getInstance().collection("Comments")
                 val commentID = db.document().id
 
                 postID?.let {
-                    val newComment = Comment(commentID, userName, commentString, postID)
+                    val newComment = Comment(commentID, createdBy, commentString, postID)
                     db.document().set(newComment)
                         .addOnSuccessListener {
                             Toast.makeText(

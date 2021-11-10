@@ -24,7 +24,7 @@ class PostListActivity : AppCompatActivity()
 
             for (post in posts)
             {
-                //Add restaurant to the LinearList
+                // Add restaurant to the LinearList
                 val textView = TextView(this)
                 textView.text = post.postString
                 textView.textSize = 20f

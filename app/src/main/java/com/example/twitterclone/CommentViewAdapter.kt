@@ -17,7 +17,7 @@ class CommentViewAdapter(
      */
     inner class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        val userNameTextView = itemView.findViewById<TextView>(R.id.usernameTextView)
+        val createdByTextView = itemView.findViewById<TextView>(R.id.createdByTextView)
         val commentTextView = itemView.findViewById<TextView>(R.id.commentTextView)
     }
 
@@ -32,7 +32,7 @@ class CommentViewAdapter(
     {
         val comment = comments[position]
         with(holder) {
-            userNameTextView.text = comment.createdBy
+            createdByTextView.text = comment.createdBy
             commentTextView.text = comment.commentString
         }
     }

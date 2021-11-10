@@ -15,7 +15,7 @@ class RecyclerListActivity : AppCompatActivity()
         binding = ActivityRecyclerListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //get data from the view model
+        // get data from the view model
         val viewModel: PostListViewModel by viewModels()
         viewModel.getPosts().observe(this, { posts ->
             var recyclerViewAdapter = RecyclerViewAdapter(this, posts)

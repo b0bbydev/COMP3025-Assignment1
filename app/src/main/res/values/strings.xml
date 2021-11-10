@@ -4,4 +4,6 @@
     <string name="enter_comment">Enter comment</string>
     <string name="save">Save</string>
     <string name="list_of_posts">List of Posts</string>
+    <string name="createdby">createdBy</string>
+    <string name="create_post">Create Post</string>
 </resources>

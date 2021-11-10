@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TwitterClone">
         <activity
+            android:name=".PostActivity"
+            android:exported="false" />
+        <activity
             android:name=".CommentActivity"
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
             android:exported="true" />
-
         <activity
             android:name=".GridRecyclerActivity"
             android:exported="true">
@@ -25,13 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RecyclerListActivity"
             android:exported="true" />
         <activity
             android:name=".PostListActivity"
             android:exported="true" />
-
     </application>
+
 </manifest>
