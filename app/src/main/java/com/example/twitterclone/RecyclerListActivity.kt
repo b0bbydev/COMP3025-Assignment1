@@ -21,5 +21,5 @@ class RecyclerListActivity : AppCompatActivity()
             var recyclerViewAdapter = RecyclerViewAdapter(this, posts)
             binding.verticalRecyclerView.adapter = recyclerViewAdapter
         })
-    }
+    }// end of onCreate().
 }// end of class.

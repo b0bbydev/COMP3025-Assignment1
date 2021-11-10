@@ -30,14 +30,14 @@ class SignInActivity : AppCompatActivity()
             .setLogo(R.drawable.logo)
             .build()
         signInLauncher.launch(signInIntent)
-    }
+    }// end of onCreate().
 
     // See: https://developer.android.com/training/basics/intents/result
     private val signInLauncher = registerForActivityResult(
         FirebaseAuthUIActivityResultContract()
     ) { res ->
         this.onSignInResult(res)
-    }
+    }// end of signInLauncher.
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult)
     {
@@ -49,7 +49,6 @@ class SignInActivity : AppCompatActivity()
             val intent = Intent(this, GridRecyclerActivity::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
-            // ...
         } else
         {
             // Sign in failed. If response is null the user canceled the
@@ -58,6 +57,6 @@ class SignInActivity : AppCompatActivity()
             // ...
             Toast.makeText(this, "Sign-in Failed", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, SignInActivity::class.java))
-        }
-    }
-}
+        }// end of if-else.
+    }// end of onSignInResult().
+}// end of class.

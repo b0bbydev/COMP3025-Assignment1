@@ -19,7 +19,7 @@ class RecyclerViewAdapter(
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         val postTextView = itemView.findViewById<TextView>(R.id.postTextView)
-    }
+    }// end of PostViewHolder.
 
     /**
      * This connects (aka inflates) the individual ViewHolder (which is the link to the item_post.xml)
@@ -30,7 +30,7 @@ class RecyclerViewAdapter(
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.item_post, parent, false)
         return PostViewHolder(view)
-    }
+    }// end of onCreateViewHolder().
 
     /**
      * This method will bind the viewHolder with a specific post object
@@ -39,10 +39,10 @@ class RecyclerViewAdapter(
     {
         val post = posts[position]
         viewHolder.postTextView.text = post.postString
-    }
+    }// end of onBindViewHolder().
 
     override fun getItemCount(): Int
     {
         return posts.size
-    }
+    }// end of getItemCount().
 }// end of class.

@@ -50,10 +50,10 @@ class GridAdapter(
     override fun getItemCount(): Int
     {
         return posts.size
-    }
+    }// end of getItemCount().
 
     interface PostItemListener
     {
         fun postSelected(post: Post)
-    }
+    }// end of PostItemListener.
 }// end of class.

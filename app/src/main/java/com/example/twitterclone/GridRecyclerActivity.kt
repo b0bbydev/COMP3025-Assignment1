@@ -26,5 +26,5 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
     override fun postSelected(post: Post)
     {
         TODO("Not yet implemented")
-    }
+    }// end of postSelected().
 }// end of class.

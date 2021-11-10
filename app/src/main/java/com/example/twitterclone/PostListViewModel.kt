@@ -56,11 +56,11 @@ class PostListViewModel : ViewModel()
                 }// end of for.
             }
             posts.value = postList
-        }
+        }// end of db.addSnapshotListener().
     }// end of loadPosts().
 
     fun getPosts(): LiveData<List<Post>>
     {
         return posts
-    }
+    }// end of getPosts().
 }// end of class.
