@@ -1,5 +1,6 @@
 package com.example.twitterclone
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,9 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
 
     override fun postSelected(post: Post)
     {
-        TODO("Not yet implemented")
+        val intent = Intent(this, CommentActivity::class.java)
+        intent.putExtra("postID", post.postID)
+        intent.putExtra("postString", post.postString)
+        startActivity(intent)
     }// end of postSelected().
 }// end of class.

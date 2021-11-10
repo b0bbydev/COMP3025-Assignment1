@@ -16,7 +16,7 @@ class PostListActivity : AppCompatActivity()
         binding = ActivityPostListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //create an instance of our RestaurantListViewModel
+        //create an instance of our PostListViewModel
         val viewModel: PostListViewModel by viewModels()
 
         viewModel.getPosts().observe(this, { posts ->

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TwitterClone</string>
-    <string name="enter_your_name">Enter your name</string>
-    <string name="enter_comment">Enter Comment</string>
+    <string name="enter_your_name">Enter your username</string>
+    <string name="enter_comment">Enter comment</string>
     <string name="save">Save</string>
     <string name="list_of_posts">List of Posts</string>
 </resources>
