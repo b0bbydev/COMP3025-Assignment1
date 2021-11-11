@@ -53,7 +53,7 @@ class CommentActivity : AppCompatActivity()
                 }
             } else
             {
-                Toast.makeText(this, "Both user name and comment are req'd", Toast.LENGTH_LONG)
+                Toast.makeText(this, "Comment cannot be empty", Toast.LENGTH_LONG)
                     .show()
             }// end of if-else.
         }// end of setOnClickListener().

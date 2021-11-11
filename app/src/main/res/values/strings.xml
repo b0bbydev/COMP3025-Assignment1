@@ -5,5 +5,7 @@
     <string name="save">Save</string>
     <string name="list_of_posts">List of Posts</string>
     <string name="createdby">createdBy</string>
-    <string name="create_post">Create Post</string>
+    <string name="createPost">Create Post</string>
+    <string name="enterPost">Enter post</string>
+    <string name="post">Post</string>
 </resources>

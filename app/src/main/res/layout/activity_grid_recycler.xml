@@ -34,8 +34,9 @@
         android:layout_gravity="end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/logo"
-        app:fabSize="normal"
+        android:src="@drawable/add"
+        app:fabSize="auto"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
