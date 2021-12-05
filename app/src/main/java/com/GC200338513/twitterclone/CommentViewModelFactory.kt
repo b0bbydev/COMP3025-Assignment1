@@ -1,4 +1,4 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

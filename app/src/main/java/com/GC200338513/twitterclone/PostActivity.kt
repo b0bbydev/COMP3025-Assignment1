@@ -1,12 +1,11 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.twitterclone.databinding.ActivityPostBinding
+import com.GC200338513.twitterclone.databinding.ActivityPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
-
 
 class PostActivity : AppCompatActivity()
 {

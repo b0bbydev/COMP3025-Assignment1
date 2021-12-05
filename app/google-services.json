@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1047808850185:android:4ab16d214701caa17c3bd8",
+        "android_client_info": {
+          "package_name": "com.GC200338513.twitterclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047808850185-uldldi486eh4t2u1e6tosppceghp69t1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.GC200338513.twitterclone",
+            "certificate_hash": "694841a5dd3bba3039c4d5aa62a5cdc7688ac489"
+          }
+        },
+        {
+          "client_id": "1047808850185-pngs502jotf2326aujp9uhdr14m6mhv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7T94xNeBqguNvN1QUxjWVCRrXhyltZqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047808850185-pngs502jotf2326aujp9uhdr14m6mhv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1047808850185:android:bea1e8a950b5e0c77c3bd8",
         "android_client_info": {
           "package_name": "com.example.twitterclone"

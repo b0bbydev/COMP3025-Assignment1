@@ -1,10 +1,10 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.twitterclone.databinding.ActivityPostListBinding
+import com.GC200338513.twitterclone.databinding.ActivityPostListBinding
 
 class PostListActivity : AppCompatActivity()
 {

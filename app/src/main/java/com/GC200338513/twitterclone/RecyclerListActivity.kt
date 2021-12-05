@@ -1,9 +1,9 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.twitterclone.databinding.ActivityRecyclerListBinding
+import com.GC200338513.twitterclone.databinding.ActivityRecyclerListBinding
 
 class RecyclerListActivity : AppCompatActivity()
 {

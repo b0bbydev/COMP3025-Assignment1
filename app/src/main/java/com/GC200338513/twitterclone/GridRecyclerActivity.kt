@@ -1,11 +1,11 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.twitterclone.databinding.ActivityGridRecyclerBinding
+import com.GC200338513.twitterclone.databinding.ActivityGridRecyclerBinding
 
 class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
 {

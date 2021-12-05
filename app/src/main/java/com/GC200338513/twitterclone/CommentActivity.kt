@@ -1,10 +1,10 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.twitterclone.databinding.ActivityCommentBinding
+import com.GC200338513.twitterclone.databinding.ActivityCommentBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CommentActivity : AppCompatActivity()

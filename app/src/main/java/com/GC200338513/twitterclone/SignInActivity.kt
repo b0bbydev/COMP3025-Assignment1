@@ -1,4 +1,4 @@
-package com.example.twitterclone
+package com.GC200338513.twitterclone
 
 import android.content.Intent
 import android.os.Bundle
