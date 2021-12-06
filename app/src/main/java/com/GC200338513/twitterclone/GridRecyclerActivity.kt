@@ -19,13 +19,6 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
         binding = ActivityGridRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // switch to PostActivity when addPostButton is clicked.
-        val addPostButton: View = findViewById(R.id.addPostButton)
-        val intent = Intent(this, PostActivity::class.java)
-        addPostButton.setOnClickListener { view ->
-            startActivity(intent)
-        }// end of addPostButton onClickListener.
-
         // get data from the view model
         val viewModel: PostListViewModel by viewModels()
         viewModel.getPosts().observe(this, { posts ->

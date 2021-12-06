@@ -36,6 +36,11 @@ class ProfileActivity : AppCompatActivity()
 
         // include toolbar.
         setSupportActionBar(binding.mainToolbar.toolbar)
+
+        // log the user out if they click on FloatingActionButton.
+        binding.logoutButton.setOnClickListener{
+            logout()
+        }
     }// end of onCreate().
 
     // this method will add the menu to the toolbar.
