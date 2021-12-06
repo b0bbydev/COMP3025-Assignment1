@@ -2,6 +2,8 @@ package com.GC200338513.twitterclone
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +32,39 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
             var gridAdapter = GridAdapter(this, posts, this)
             binding.gridRecyclerView.adapter = gridAdapter
         })
+
+        // include toolbar.
+        setSupportActionBar(binding.mainToolbar.toolbar)
     }// end of onCreate().
+
+    // this method will add the menu to the toolbar.
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean
+    {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }// end of onCreateOptionsMenu().
+
+    // enable the navigation through menu items on toolbar.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean
+    {
+        when(item.itemId){
+            // add post button.
+            R.id.action_add -> {
+                startActivity(Intent(applicationContext, PostActivity::class.java))
+                return true
+            }
+            // post list button.
+            R.id.action_post_list -> {
+                //startActivity(Intent(applicationContext, GridRecyclerActivity::class.java))
+                return true
+            }
+            // profile button.
+            R.id.action_profile -> {
+
+            }
+        }// end of when.
+        return super.onOptionsItemSelected(item)
+    }// end of onOptionsItemSelected().
 
     override fun postSelected(post: Post)
     {

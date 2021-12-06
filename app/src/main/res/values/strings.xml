@@ -8,4 +8,7 @@
     <string name="createPost">Create Post</string>
     <string name="enterPost">Enter post</string>
     <string name="post">Post</string>
+    <string name="create_a_post">Create a post</string>
+    <string name="view_posts">View Posts</string>
+    <string name="view_profile">View Profile</string>
 </resources>

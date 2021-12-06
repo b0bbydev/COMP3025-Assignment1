@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TwitterClone">
         <activity
-            android:name="com.GC200338513.twitterclone.PostActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.GC200338513.twitterclone.CommentActivity"
+            android:name=".PostActivity"
             android:exported="false" />
         <activity
-            android:name="com.GC200338513.twitterclone.SignInActivity"
+            android:name=".CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GridRecyclerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +31,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.GC200338513.twitterclone.GridRecyclerActivity"
+            android:name=".RecyclerListActivity"
             android:exported="true" />
         <activity
-            android:name="com.GC200338513.twitterclone.RecyclerListActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.GC200338513.twitterclone.PostListActivity"
+            android:name=".PostListActivity"
             android:exported="true" />
     </application>
 
