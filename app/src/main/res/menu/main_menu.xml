@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_add"
+        android:icon="@drawable/add_post_button"
+        android:title="@string/create_a_post"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_post_list"
+        android:icon="@drawable/post_list_icon"
+        android:title="@string/view_posts"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_profile"
+        android:icon="@drawable/profile_icon"
+        android:title="@string/view_profile"
+        app:showAsAction="ifRoom"/>
+</menu>

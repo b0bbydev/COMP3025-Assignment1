@@ -60,7 +60,8 @@ class GridRecyclerActivity : AppCompatActivity(), GridAdapter.PostItemListener
             }
             // profile button.
             R.id.action_profile -> {
-
+                startActivity(Intent(applicationContext, ProfileActivity::class.java))
+                return true
             }
         }// end of when.
         return super.onOptionsItemSelected(item)

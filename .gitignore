@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+Deployment Assets/keystore.jks
+Deployment Assets/private_key.pepk
