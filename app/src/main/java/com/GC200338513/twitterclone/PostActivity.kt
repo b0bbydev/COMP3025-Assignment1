@@ -74,19 +74,23 @@ class PostActivity : AppCompatActivity()
     // enable the navigation through menu items on toolbar.
     override fun onOptionsItemSelected(item: MenuItem): Boolean
     {
-        when(item.itemId){
+        when (item.itemId)
+        {
             // add post button.
-            R.id.action_add -> {
+            R.id.action_add ->
+            {
                 //startActivity(Intent(applicationContext, PostActivity::class.java))
                 return true
             }
             // post list button.
-            R.id.action_post_list -> {
+            R.id.action_post_list ->
+            {
                 startActivity(Intent(applicationContext, GridRecyclerActivity::class.java))
                 return true
             }
             // profile button.
-            R.id.action_profile -> {
+            R.id.action_profile ->
+            {
                 startActivity(Intent(applicationContext, ProfileActivity::class.java))
                 return true
             }

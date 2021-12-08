@@ -6,12 +6,17 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.GC200338513.twitterclone.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 class ProfileActivity : AppCompatActivity()
 {
-    private lateinit var binding : ActivityProfileBinding
+    private lateinit var binding: ActivityProfileBinding
     private val authDB = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -20,14 +25,12 @@ class ProfileActivity : AppCompatActivity()
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // enable the scroll bars.
-        binding.tosTextView.movementMethod = ScrollingMovementMethod()
-
         // ensure we have authenticated user.
-        if(authDB.currentUser == null)
+        if (authDB.currentUser == null)
         {
             logout()
-        } else {
+        } else
+        {
             authDB?.currentUser?.let { user ->
                 binding.UsernameTextView.text = user.displayName
                 binding.emailTextView.text = user.email
@@ -37,9 +40,47 @@ class ProfileActivity : AppCompatActivity()
         // include toolbar.
         setSupportActionBar(binding.mainToolbar.toolbar)
 
+        // add functionality to change user's name.
+        binding.saveChanges.setOnClickListener {
+            // saving what user enters.
+            val newNameString = binding.changeNameEditText.text.toString()
+
+            // create the ability to save a post.
+            if (newNameString.isNotEmpty())
+            {
+                // get the current user.
+                val currentUser = Firebase.auth.currentUser
+
+                // set the existing name to the new name entered.
+                val profileUpdates = userProfileChangeRequest {
+                    displayName = newNameString
+                }// end of changeRequest.
+
+                currentUser!!.updateProfile(profileUpdates)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful)
+                        {
+                            Toast.makeText(
+                                this,
+                                "Updated",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }// end of if.
+                    }// end of onCompleteListener.
+            } else
+            {
+                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG)
+                    .show()
+            }// end of if-else.
+
+            finish()
+        }// end of saveChanges onClickListener.
+
         // log the user out if they click on FloatingActionButton.
-        binding.logoutButton.setOnClickListener{
+        binding.logoutButton.setOnClickListener {
             logout()
+            Toast.makeText(this, "Logged Out", Toast.LENGTH_LONG)
+                .show()
         }
     }// end of onCreate().
 
@@ -53,19 +94,23 @@ class ProfileActivity : AppCompatActivity()
     // enable the navigation through menu items on toolbar.
     override fun onOptionsItemSelected(item: MenuItem): Boolean
     {
-        when(item.itemId){
+        when (item.itemId)
+        {
             // add post button.
-            R.id.action_add -> {
+            R.id.action_add ->
+            {
                 startActivity(Intent(applicationContext, PostActivity::class.java))
                 return true
             }
             // post list button.
-            R.id.action_post_list -> {
+            R.id.action_post_list ->
+            {
                 startActivity(Intent(applicationContext, GridRecyclerActivity::class.java))
                 return true
             }
             // profile button.
-            R.id.action_profile -> {
+            R.id.action_profile ->
+            {
                 //startActivity(Intent(applicationContext, ProfileActivity::class.java))
                 return true
             }
